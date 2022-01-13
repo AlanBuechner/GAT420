@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 181392953}
   - component: {fileID: 181392951}
   - component: {fileID: 181392952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Agent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TagName: Player
   m_Radius: 20
-  m_MaxAngle: 45
+  m_MaxAngle: 180
+  m_Mask:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!114 &181392952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424914e4500402244949049ca016d408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_WanderRadius: 1
+  m_WanderDistance: 1
+  m_WanderFrequency: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +475,7 @@ GameObject:
   - component: {fileID: 840286379}
   - component: {fileID: 840286378}
   - component: {fileID: 840286382}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
