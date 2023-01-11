@@ -18,17 +18,17 @@ public class AutonomusAgent : Agent
 	{
 		Vector3 acceleration = Vector3.zero;
 
-		//GameObject[] objects = m_Perseption.GetGameObjects();
-		//if(objects.Length != 0)
-		//{
-		//	// draw debug lines
-		//	Debug.DrawLine(transform.position, objects[0].transform.position);
+		GameObject[] objects = m_Perseption.GetGameObjects();
+		if(objects.Length != 0)
+		{
+			// draw debug lines
+			Debug.DrawLine(transform.position, objects[0].transform.position);
 
-		//	Vector3 force = m_Steering.Flee(this, objects[0].transform.position);
-		//	acceleration += force.normalized * 3;
-		//}
+			Vector3 force = m_Steering.Steer(this, objects[0].transform.position);
+			acceleration += force.normalized * 3;
+		}
 
-		acceleration += m_Steering.Wander(this);
+		//acceleration += m_Steering.Wander(this);
 
 		m_Velocity += acceleration * Time.deltaTime;
 		m_Velocity = Vector3.ClampMagnitude(m_Velocity, m_MaxSpeed);
